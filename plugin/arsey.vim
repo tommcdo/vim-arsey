@@ -14,7 +14,11 @@ function! s:arsie()
 	if g:arsie_vimrc_all
 		let files = reverse(files)
 	else
-		let files = [files[0]]
+		if len(files) > 0
+			let files = [files[0]]
+		else
+			let files = []
+		endif
 	endif
 
 	for file in files
